@@ -29,11 +29,11 @@ python main.py --data_root /path/to/save/real/ --dataset real_world
 ```
 ### Evaluation
 Models can be downloaded from [Baidu Netdisk](https://pan.baidu.com/s/134HOeU_6K51YUbqdLEQYDg?pwd=rmbd) or [Google drive](https://drive.google.com/file/d/1oKfhn8ZuI31Om81DEMHHJRmMy5u6HkNV/view?usp=share_link).
-To evaluate a synthetic rotary motion burred image, run the following code:
+To evaluate a synthetic rotary motion bur image, run the following code:
 ```
 python evl.py --dataset syn --path_model /path/to/syn.pt
 ```
-To evaluate a real-world rotary motion burred image, run the following code:
+To evaluate a real-world rotary motion bur image, run the following code:
 ```
 python evl.py --dataset real --path_model /path/to/real.pt
 ```
