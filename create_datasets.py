@@ -105,20 +105,17 @@ if __name__ == '__main__':
     parser.add_argument('--save_root', type=str, default='/data1/hunnzi/DataSets/real_world_test/')
     opt = parser.parse_args()
 
-    # if opt.dataset == 'syn':
-    #     print('---------- Creating synthetic rotary motion blur datasets ----------\n')
-    #     print('---------- Creating training datasets ----------\n')
-    #     create_BSDS(data_root=opt.data_root, save_root=opt.save_root, phase='train')
-    #     print('---------- Creating testing datasets ----------\n')
-    #     create_BSDS(data_root=opt.data_root, save_root=opt.save_root, phase='test')
-    # elif opt.dataset == 'real':
-    #     print('---------- Creating real-world rotary motion blur datasets ----------\n')
-    #     print('---------- Creating training datasets ----------\n')
-    #     create_real(data_root=opt.data_root, save_root=opt.save_root, phase='test')
-    #     print('---------- Creating testing datasets ----------\n')
-    #     create_real(data_root=opt.data_root, save_root=opt.save_root, phase='train')
-    # else:
-    #     print('--dataset should be syn or real!')
-
-    create_BSDS(data_root='/data1/hunnzi/DataSets/BSDS500/BSDS500',
-                save_root='/data1/hunnzi/DataSets/BSDS500_release/', phase='test')
+    if opt.dataset == 'syn':
+        print('---------- Creating synthetic rotary motion blur datasets ----------\n')
+        print('---------- Creating training datasets ----------\n')
+        create_BSDS(data_root=opt.data_root, save_root=opt.save_root, phase='train')
+        print('---------- Creating testing datasets ----------\n')
+        create_BSDS(data_root=opt.data_root, save_root=opt.save_root, phase='test')
+    elif opt.dataset == 'real':
+        print('---------- Creating real-world rotary motion blur datasets ----------\n')
+        print('---------- Creating training datasets ----------\n')
+        create_real(data_root=opt.data_root, save_root=opt.save_root, phase='train')
+        print('---------- Creating testing datasets ----------\n')
+        create_real(data_root=opt.data_root, save_root=opt.save_root, phase='test')
+    else:
+        print('--dataset should be syn or real!')
