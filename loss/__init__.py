@@ -1,16 +1,11 @@
 import os
 from importlib import import_module
-from re import T
-from tensorboardX import SummaryWriter
 import torch
 from torch import nn
 import torch.distributed as dist
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')  # https://github.com/matplotlib/matplotlib/issues/3466
-colors_ = ['b', 'g', 'm', 'k', 'c', 'y', 'r', 'orange']
-
 from .metric import PSNR, SSIM, ssim_loss
-from utils import interact
 
 class Loss(torch.nn.modules.loss._Loss):
     def __init__(self, args, epoch=None, model=None, optimizer=None, writer=None):
